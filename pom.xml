@@ -31,15 +31,15 @@
 	<distributionManagement>
 		<!-- Publish the versioned releases here -->
 		<repository>
-			<id>release-local</id>
-			<name>release-local</name>
+			<id>nexus-local-repo</id>
+			<name>nexus-local-repo release</name>
 			<url>dav:http://${repo.local.baseurl}/nexus/content/repositories/releases</url>
 		</repository>
 
 		<!-- Publish the versioned releases here -->
 		<snapshotRepository>
-			<id>snapshot-local</id>
-			<name>snapshot-local</name>
+			<id>nexus-local-repo</id>
+			<name>nexus-local-repo snapshot</name>
 			<url>dav:http://${repo.local.baseurl}/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>	
@@ -47,8 +47,8 @@
 	<!-- download artifacts from this repo -->
 	<repositories>
 		<repository>
-			<id>repo-nexus-local</id>
-			<name>repo-nexus-local</name>
+			<id>nexus-local-repo</id>
+			<name>nexus-local-repo lib</name>
 			<url>http://${repo.local.baseurl}/nexus/content/groups/public</url>
 			<releases>
 				<enabled>true</enabled>
@@ -63,8 +63,8 @@
 	<!-- download plugins from this repo -->
 	<pluginRepositories>
 		<pluginRepository>
-			<id>repo-nexus-local</id>
-			<name>repo-nexus-local</name>
+			<id>nexus-local-repo</id>
+			<name>nexus-local-repo plugin</name>
 			<url>http://${repo.local.baseurl}/nexus/content/groups/public</url>
 			<releases>
 				<enabled>true</enabled>
