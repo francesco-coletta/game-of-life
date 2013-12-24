@@ -18,8 +18,8 @@
 		<thucydides.version>0.9.222</thucydides.version>
 		<jelastic.context>gameoflife</jelastic.context>
 		<jelastic.environment>wakaleo</jelastic.environment>
-		
-		<repo.baseurl>192.168.56.100</repo.baseurl>
+
+		<repo.local.baseurl>192.168.56.100</repo.local.baseurl>
 	</properties>
 
 	<scm>
@@ -29,15 +29,54 @@
 	</scm>
 
 	<distributionManagement>
+		<!-- Publish the versioned releases here -->
 		<repository>
-			<id>libs-release-local</id>
-			<url>http://${repo.baseurl}/artifactory/libs-release-local</url>
+			<id>release-local</id>
+			<name>release-local</name>
+			<url>dav:http://${repo.local.baseurl}/nexus/content/repositories/releases</url>
 		</repository>
+
+		<!-- Publish the versioned releases here -->
 		<snapshotRepository>
-			<id>libs-snapshot-local</id>
-			<url>http://${repo.baseurl}/artifactory/libs-snapshot-local</url>
+			<id>snapshot-local</id>
+			<name>snapshot-local</name>
+			<url>dav:http://${repo.local.baseurl}/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>	
+
+	<!-- download artifacts from this repo -->
+	<repositories>
+		<repository>
+			<id>repo-nexus-local</id>
+			<name>repo-nexus-local</name>
+			<url>http://${repo.local.baseurl}/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
+	<!-- download plugins from this repo -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>repo-nexus-local</id>
+			<name>repo-nexus-local</name>
+			<url>http://${repo.local.baseurl}/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+
 
 	<build>
 		<plugins>
