@@ -19,7 +19,7 @@
 		<jelastic.context>gameoflife</jelastic.context>
 		<jelastic.environment>wakaleo</jelastic.environment>
 
-		<repo.local.baseurl>192.168.56.100</repo.local.baseurl>
+		<repo.local.baseurl>192.168.56.100:8080</repo.local.baseurl>
 	</properties>
 
 	<scm>
