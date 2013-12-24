@@ -18,6 +18,8 @@
 		<thucydides.version>0.9.222</thucydides.version>
 		<jelastic.context>gameoflife</jelastic.context>
 		<jelastic.environment>wakaleo</jelastic.environment>
+		
+		<repo.baseurl>192.168.56.100</repo.baseurl>
 	</properties>
 
 	<scm>
