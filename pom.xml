@@ -38,7 +38,7 @@
             <url>${project.build.directory}/siteWithSubModules</url> 
             <url>${project.baseDir}/target/staging/</url>           
             -->
-            <url>/tmp/game-of-life-maven/stage</url>
+            <url>file:///tmp/game-of-life-maven/stage</url>
          </site>
 		 
 		<!-- Publish the versioned releases here -->
