@@ -29,6 +29,18 @@
 	</scm>
 
 	<distributionManagement>
+         <site>
+            <id>site</id>
+            <name>${application.name}</name>
+            <!-- Use mvn site:stage to get a working local copy of site AFTER building it normally -->
+            <!-- Note: stagingDirectory cannot be dynamic, i.e. stagingDirectory=${basedir}\fullsite -->
+            <!-- 
+            <url>${project.build.directory}/siteWithSubModules</url> 
+            <url>${project.baseDir}/target/staging/</url>           
+            -->
+            <url>/tmp/game-of-life-maven/stage</url>
+         </site>
+		 
 		<!-- Publish the versioned releases here -->
 		<repository>
 			<id>nexus-local-repo</id>
